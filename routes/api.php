@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+// Route::apiResource('vehicles','VehicleController');
+
+Route::get('/vehicles', [VehicleController::class, 'index']);
+
+// Route::get('/products', function(){
+//     return 'products';
+// });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

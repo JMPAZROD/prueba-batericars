@@ -40,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the Vehicle() for the publication .
+     */
+    public function Vehicle()
+    {
+        return $this->hasMany('App\Models\Vehicle','id_users','id');
+    }
 }
